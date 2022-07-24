@@ -337,28 +337,42 @@ footer * {
         background-color: rgb(213, 216, 213);
     }
 
+    /* ---------- navigation section ---------- */
     .nav-section.grid a {
-        font-size: 1em;
+        font-size: 0.8em;
     }
 
+    /* ---------- large background image ---------- */
+    #mobile-background-image {
+        /* hide mobile background image */
+        display: none;
+    }
+
+    /* ---------- welcome section ---------- */
+    .welcome-section {
+        /* add in desktop background image */
+        background-image: url('./images/bg-intro-desktop.svg');
+        background-position: 100px 100px;
+        background-repeat: no-repeat;
+        background-position: 160% 90%;
+        background-size: 70%;
+
+        padding: 147px 118px;
+    }
+
+    .welcome-section * {
+        margin-right: 50%;
+        text-align: left;
+    }
+
+    .welcome-section p {
+        padding: 0;
+    }
     /* ---------- why choose section ---------- */
 
-    .head-why-choose {
-        text-align: left;
-    }
+    /* ---------- latest articles section ---------- */
 
-    .service-cards {
-        /* the size of each card in mobile */
-        grid-column: span 1;
-        text-align: left;
-    }
-    .service-cards p {
-        width: 20ch;
-    }
+    /* ---------- footer section ---------- */
 
-
-    /* ---------- latest article section ---------- */
-    .article-card {
-        grid-column: span 1;
-    }
+    /* ---------- attribution section ---------- */
 }
