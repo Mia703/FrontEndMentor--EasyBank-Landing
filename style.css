@@ -1,378 +1,348 @@
-
 /* =================== imported fonts =================== */
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
 
 /* =================== global variables =================== */
 :root {
 
-    /* primary colours */
-    --dark-Blue: hsl(233, 26%, 24%);
-    --lime-Green: hsl(136, 65%, 51%);
-    --bright-Cyan: hsl(192, 70%, 51%);
+	/* primary colours */
+	--dark-Blue: hsl(233, 26%, 24%);
+	--lime-Green: hsl(136, 65%, 51%);
+	--bright-Cyan: hsl(192, 70%, 51%);
 
-    /* neutral colours */
-    --gray-Blue: hsl(233, 8%, 62%);
-    --light-Gray-Blue: hsl(220, 16%, 96%);
-    --very-Light-Grey-Blue: hsl(0, 0%, 98%);
-    --white: hsl(0, 0%, 100%);
-
+	/* neutral colours */
+	--gray-Blue: hsl(233, 8%, 62%);
+	--light-Gray-Blue: hsl(220, 16%, 96%);
+	--very-Light-Grey-Blue: hsl(0, 0%, 98%);
+	--white: hsl(0, 0%, 100%);
 }
 
 /* =================== reset default styles =================== */
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
+	/* all elements */
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
 }
 
 li {
-    list-style-type: none;
+	list-style-type: none;
 }
 
 /* =================== base styles =================== */
 body {
-    background-color: var(--very-Light-Grey-Blue);
-    font-family: 'Public Sans', sans-serif;
-    font-size: 18px;
+	background-color: var(--very-Light-Grey-Blue);
+	font-family: 'Public Sans', sans-serif;
+	font-size: 18px;
+	font-weight: 300;
 }
 
-/* all the buttons have the same design */
 button {
-    
-    background: linear-gradient(to right, var(--lime-Green), var(--bright-Cyan));
-    border: 0px solid;
-    border-radius: 100px;
-    
-    color: var(--very-Light-Grey-Blue);
-    font-size: 0.8em;
-    padding: 12px 30px;
+	/* button colour */
+	background: linear-gradient(to right, var(--lime-Green), var(--bright-Cyan));
+	border: 0;
+	/* no border */
+	border-radius: 100px;
 
+	/* text colour */
+	color: var(--very-Light-Grey-Blue);
+	font-size: 0.8em;
+
+	/* size of  button */
+	padding: 12px 30px;
 }
 
 button:hover {
-    /* temporarily change the var style */
-    --lime-Green: hsla(136, 65%, 51%, 0.5);
-    --bright-Cyan: hsla(192, 70%, 51%, 0.5);
+	/* temporarily change the var style */
+	--lime-Green: hsla(136, 65%, 51%, 0.5);
+	--bright-Cyan: hsla(192, 70%, 51%, 0.5);
 
-    background: linear-gradient(to right, var(--lime-Green), var(--bright-Cyan));
-    color: var(--very-Light-Grey-Blue);
+	/* button colour */
+	background: linear-gradient(to right, var(--lime-Green), var(--bright-Cyan));
+
+	/* text colour */
+	color: var(--very-Light-Grey-Blue);
 }
 
-/* =================== font styles =================== */
+/* =================== base font styles =================== */
 h1, h2, h3, h4, h5 {
-    font-weight: 300;
-    color: var(--dark-Blue);
+	color: var(--dark-Blue);
+	font-weight: 300;
 }
 
 h1 {
-    font-size: 3em;
+	font-size: 2.5em;
 }
 
 h2 {
-    font-size: 2em;
+	font-size: 2em;
 }
 
-h3 {
-    font-size: 1.5em;
-}
+/* keep the h3 font size the same */
 
 h4 {
-    font-size: 1em;
+	font-size: 1em;
 }
 
 h5 {
-    color: var(--gray-Blue);
-    font-size: 0.5em;
+	color: var(--gray-Blue);
+	font-size: 0.5em;
 }
 
 p {
-    color: var(--gray-Blue);
-    font-size: 1em;
-    line-height: 1.5em;
+	color: var(--gray-Blue);
+	font-size: 1em;
+	line-height: 2em;
+	width: 39ch;
+	/* aligning the text at the centre again b/c width messes it up */
+	margin: 0 auto;
 }
 
-/* =================== mobile design: 0px and above =================== */
+/* =================== base grid style =================== */
 .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
 
-    /* border-sizing = sets how the total width and height of an element is calculated */
-    /* border-box = tells the browser to account for any border or padding 
+	/* border-sizing = sets how the total width and height of an element is calculated */
+	/* border-box = tells the browser to account for any border or padding 
         in the values that specify an element's width and height */
-    box-sizing: border-box;
+	box-sizing: border-box;
+}
 
+.nested-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
+	box-sizing: border-box;
 }
 
 /* =================== media queries =================== */
 
+/* =================== mobile phone style (MAIN) =================== */
+
 /* ---------- navigation section ---------- */
-.nav-section.grid {
-    /* the size of the navigation bar */
-    margin: 20px;
+.nav-section {
+	padding: 30px 20px;
 }
 
 #nav-section-logo {
-    grid-column: span 3;
-    display: block;
+	grid-column: span 3;
+	grid-row: 1;
 }
 
 #nav-section-hamburger {
-    grid-column: span 1;
-    text-align: right;
+	grid-column: span 1;
+	grid-row: 1;
+
+	text-align: right;
 }
 
 .nav-section.grid ul {
-    /* hide the navigation list on mobile */
-    display: none;
+	/* hide the menu */
+	display: none;
 }
 
 #nav-request-btn {
-    /* hide the request invoice btn on mobile */
-    display: none;
+	/* hide the button */
+	display: none;
 }
 
-/* ---------- background image ---------- */
-#mobile-background-image {
-    /* make the background image span the whole width */
-    width: 100%;
+/* ---------- headline section ---------- */
+.headline-section.grid {
+	/* create two rows */
+	grid-template-rows: repeat(2, minmax(auto, auto));
 }
 
-/* ---------- welcome section ---------- */
-.welcome-section {
-    padding: 80px 20px;
-    text-align: center;
+.headline-section.grid .mobile-bg-img-group {
+	grid-row: 1;
+	grid-column: span 4;
+
+	/* background image */
+	background-image: url('./images/bg-intro-mobile.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+
+	/* overflow = controls what happnes to content that breaks outside of its bounds */
+	overflow: hidden;
 }
 
-.welcome-section * {
-    /* everything in the welcome section have a margin of */
-    margin: 15px 0;
+.headline-section.grid .mobile-bg-img-group img {
+	/* make the image full width */
+	width: 100%;
+
+	position: relative;
+	top: -170px;
 }
 
-/* ---------- why choose section ---------- */
-.why-choose-section {
-    background-color: var(--light-Gray-Blue);
-    padding: 80px 20px;
+.headline-section.grid .headline-section-group {
+	grid-row: 2;
+	grid-column: span 4;
+
+	text-align: center;
+
+	/* all HTML elements should have 20px left-right */
+	margin: 0px 20px;
+
+	margin-bottom: 100px;
 }
 
-.head-why-choose {
-    text-align: center;
-    margin: 0px 0px 50px 0px;
+.headline-section.grid .headline-section-group * {
+	/* each HTML element should be spaced with 20px bottom margin */
+	margin-bottom: 20px;
 }
 
-.head-why-choose h2 {
-    margin: 0 auto 10px;
-    width: 10ch;
+/* ---------- services provided section ---------- */
+.why-choose-section.grid {
+	/* create two rows */
+	grid-template-rows: repeat(2, minmax(auto, auto));
+
+	
+	text-align: center;
+	
+	background-color: var(--light-Gray-Blue);
+
+	/* all HTML elements should have 20px left-right */
+	padding: 80px 20px;
 }
 
-.head-why-choose p {
-    margin: 0 auto;
-    width: 40ch;
+.why-choose-section.grid .head-why-choose-collection {
+	/* make the "why choose easybank" header span all 4 columns of the 1st row */
+	grid-row: 1;
+	grid-column: span 4;
 }
 
-/* services provided cards */
-.service-cards {
-    text-align: center;
+.why-choose-section.grid .head-why-choose-collection h2 {
+	width: 10ch;
 
-    /* the size of each card in mobile */
-    grid-column: span 4;
-
-    display: block;
-
-    margin: 10px 0px;
+	/* each HTML element should be spaced with 20px bottom margin */
+	margin: 0 auto 20px;
 }
 
-.service-cards * {
-    /* all elements inside service-cards */
-    margin: 10px 0px;
+.why-choose-section.grid .head-why-choose-collection p {
+	margin-bottom: 50px;
 }
 
-.service-cards p {
-    margin: 0;
-    padding: 0;
-    width: 35ch;
+.why-choose-section.grid .service-cards-collection {
+	/* make the service cards collection span all 4 columns on the 2nd row */
+	grid-row: 2;
+	grid-column: span 4;
 }
 
-/* ---------- latest articles section ---------- */
-.latest-articles-section {
-    padding: 80px 20px;
+/* inside the nested grid... */
+.service-card-grid-item {
+	/* make each card sit in their own row */
+	grid-column: span 4;
 }
 
-.latest-articles-section h2 {
-    margin: 40px 0px;
-    text-align: center;
+.service-card-grid-item * {
+	margin-bottom: 15px;
 }
 
-/* latest article cards */
-.article-card {
-    grid-column: span 4;
-    
-    display: block;
+/* ---------- article section ---------- */
+.latest-articles-section.grid {
+	/* create 2 rows */
+	grid-template-rows: repeat(2, minmax(auto, auto));
 
-    width: 310px;
-
-    border-radius: 10px;
-
-    margin: 0 auto;
-
-    box-shadow: 0px 0px 4px lightgray;
+	/* all HTML elements should have 20px left-right */
+	padding: 80px 20px;
 }
 
-.article-card img {
-    width: 310px;
-    height: 186px;
+.latest-articles-section.grid h2 {
+	/* make the heading span all 4 columns on the 1st row */
+	grid-row: 1;
+	grid-column: span 4;
 
-    border-radius: 10px 10px 0 0;
+	margin: 0 auto;
 }
 
-.article-card h5, h4, p {
-    padding: 5px 20px;
+.latest-articles-section.grid .article-card-collection {
+	/* make the article card collection span all 4 columns on the 2nd row */
+	grid-row: 2;
+	grid-column: span 4;
 }
 
-.article-card p {
-    font-size: 0.8em;
+.article-card-grid-item {
+	/* make each card sit on their own row */
+	grid-column: span 4;
+
+	width: 350px;
+	height: 450px;
+	margin: 15px auto;
+	border-radius: 10px;
+	box-shadow: 0px 0px 5px lightgray;
 }
 
-/* ---------- footer section ---------- */
-footer {
-    background-color: var(--dark-Blue);
-    text-align: center;
-    padding: 80px 0px 20px;
+.article-card-grid-item img {
+	width: 350px;
+    height: 207px;
+
+	border-radius: 10px 10px 0 0;
 }
 
-footer * {
-    /* everything in the footer has top-bottom margin */
-    margin: 20px 0px;
+.article-card-text-collection {
+	/* margin = space around the element
+		padding = space inside the element
+	*/
+	padding: 25px;
+}
+	
+.article-card-text-collection * {
+	margin: 10px;
 }
 
-/* social media icons */
-.social-links-divider img {
-    display: inline-block;
-    margin: 0 5px;
+.article-card-text-collection p {
+	font-size: 0.7em;
 }
 
-/* footer links menu */
-.footer-menu a {
-    color: var(--white);
-    font-size: 0.8em;
+
+/* ---------- footer and attribution section ---------- */
+footer.footer-grid {
+	background-color: var(--dark-Blue);
+	grid-column: span 4;
+
+	text-align: center;
+
+	padding: 40px;
+}
+
+footer.footer-grid * {
+	margin-bottom: 15px;
+}
+
+/* social media links */
+.social-links-collection * {
+	margin: 0 5px;
+}
+.footer-menu-collection a {
+	color: var(--light-Gray-Blue);
+	font-size: 0.8em;
+}
+
+/* copyright collection */
+.footer-btn-copyright-collection {
+	text-align: center;
+	margin: 20px;
 }
 
 #copyright {
-    font-size: 0.5em;
+	font-size: 0.7em;
 }
 
-/* ---------- attribution section ---------- */
-.attribution-section {
-    color: var(--very-Light-Grey-Blue);
-    font-size: 0.5em;
+/* attribution section */
+.attribution-section p {
+	font-size: 11px;
+
+	--very-Light-Grey-Blue: hsla(0, 0%, 98%, 0.2);
+	color: var(--very-Light-Grey-Blue);
 }
 
 .attribution-section a {
-    color: var(--very-Light-Grey-Blue);
+	color: hsl(228, 45%, 44%);
 }
 
-/* ---------- small tablet styles: 620px and above ---------- */
-@media screen and (min-width: 620px) {
+/* =================== small tablet style - 620px and above =================== */
+@media screen and (min-width: 620px) {}
 
-    /* ---------- navigation section ---------- */
-    .nav-section.grid {
-        margin: 20px 10px;
-    }
-
-    #nav-section-logo {
-        /* spans 1 column */
-        grid-column: span 1;
-        display: block;
-        margin: auto auto;
-    }
-
-    /* navigation text menu */
-    .nav-section.grid ul {
-        /* spans 2 columns */
-        grid-column: span 2;
-        display: block;
-
-        /* x-axis and y-axis aligns the menu items inside the grid column */
-        margin: auto auto;
-    }
-
-    .nav-section.grid li {
-        display: inline-block;
-    }
-    
-    .nav-section.grid a {
-        font-size: 0.7em;
-        text-align: center;
-        margin: auto 10px;
-    }
-
-    /* navigation request invite btn */
-    #nav-request-btn {
-        /* spans 1 column */
-        grid-column: span 1;
-        display: block;
-        margin: auto auto;
-    }
-
-    /* hide the hamburguer icon */
-    #nav-section-hamburger {
-        display: none;
-    }
-
-    /* ---------- why choose section ---------- */
-    .service-cards {
-        /* the size of each card in mobile */
-        grid-column: span 2;
-    }
-
-    /* ---------- latest article section ---------- */
-    .article-card {
-        grid-column: span 2;
-    }
-}
-
-/* ---------- large tablets and laptop styles: 960px and above ---------- */
-@media screen and (min-width: 960px) {
-    body {
-        background-color: rgb(213, 216, 213);
-    }
-
-    /* ---------- navigation section ---------- */
-    .nav-section.grid a {
-        font-size: 0.8em;
-    }
-
-    /* ---------- large background image ---------- */
-    #mobile-background-image {
-        /* hide mobile background image */
-        display: none;
-    }
-
-    /* ---------- welcome section ---------- */
-    .welcome-section {
-        /* add in desktop background image */
-        background-image: url('./images/bg-intro-desktop.svg');
-        background-position: 100px 100px;
-        background-repeat: no-repeat;
-        background-position: 160% 90%;
-        background-size: 70%;
-
-        padding: 147px 118px;
-    }
-
-    .welcome-section * {
-        margin-right: 50%;
-        text-align: left;
-    }
-
-    .welcome-section p {
-        padding: 0;
-    }
-    /* ---------- why choose section ---------- */
-
-    /* ---------- latest articles section ---------- */
-
-    /* ---------- footer section ---------- */
-
-    /* ---------- attribution section ---------- */
-}
+/* =================== large tablet and laptop style - 960px and above =================== */
+@media screen and (min-width: 960px) {}
