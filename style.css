@@ -271,6 +271,12 @@ p {
 	margin: 15px auto;
 	border-radius: 10px;
 	box-shadow: 0px 0px 5px lightgray;
+
+	background-color: var(--white);
+}
+
+.article-card-grid-item:hover {
+	box-shadow: 0px 0px 15px lightgray;
 }
 
 .article-card-grid-item img {
@@ -295,31 +301,48 @@ p {
 	font-size: 0.7em;
 }
 
-
 /* ---------- footer and attribution section ---------- */
-footer.footer-grid {
+footer.footer-section.grid {
 	background-color: var(--dark-Blue);
-	grid-column: span 4;
 
+	/* creat 4 rows */
+	grid-template-rows: repeat(4, minmax(auto, auto));
 	text-align: center;
 
 	padding: 40px;
 }
 
-footer.footer-grid * {
+footer.footer-section.grid * {
 	margin-bottom: 15px;
 }
 
 /* social media links */
+footer.footer-section.grid .social-links-collection {
+	grid-row: 1;
+	grid-column: span 4;
+}
+
 .social-links-collection * {
 	margin: 0 5px;
 }
+
+/* footer menu */
+footer.footer-section.grid .footer-menu-collection {
+	grid-row: 2;
+	grid-column: span 4;
+}
+
 .footer-menu-collection a {
 	color: var(--light-Gray-Blue);
 	font-size: 0.8em;
 }
 
-/* copyright collection */
+/* button and copyright */
+footer.footer-section.grid .footer-btn-copyright-collection {
+	grid-row: 3;
+	grid-column: span 4;
+}
+
 .footer-btn-copyright-collection {
 	text-align: center;
 	margin: 20px;
@@ -330,6 +353,11 @@ footer.footer-grid * {
 }
 
 /* attribution section */
+footer.footer-section.grid .attribution-section {
+	grid-row: 4;
+	grid-column: span 4;
+}
+
 .attribution-section p {
 	font-size: 11px;
 
@@ -342,7 +370,190 @@ footer.footer-grid * {
 }
 
 /* =================== small tablet style - 620px and above =================== */
-@media screen and (min-width: 620px) {}
+@media screen and (min-width: 620px) {
+
+	/* ---------- navigation section ---------- */
+	.nav-section {
+		padding: 20px 20px;
+	}
+
+	#nav-section-logo {
+		grid-column: span 2;
+		grid-row: 1;
+	}
+
+	#nav-section-hamburger {
+		/* hide the hamburger menu */
+		display: none;
+	}
+
+	.nav-section.grid ul {
+		display: block;
+		grid-column: span 2;
+		margin: 0 auto;
+	}
+
+	.nav-section li {
+		display: inline-block;
+		margin: 0px 5px;
+	}
+
+	.nav-section a {
+		color: var(--gray-Blue);
+		font-size: 0.8em;
+	}
+}
 
 /* =================== large tablet and laptop style - 960px and above =================== */
-@media screen and (min-width: 960px) {}
+@media screen and (min-width: 960px) {
+
+	/* ---------- navigation section ---------- */
+	.nav-section {
+		padding: 20px 20px;
+	}
+
+	#nav-section-logo {
+		grid-column: span 1;
+		grid-row: 1;
+	}
+
+	#nav-section-hamburger {
+		/* hide the hamburger menu */
+		display: none;
+	}
+
+	.nav-section.grid ul {
+		display: block;
+		grid-column: span 2;
+		margin: 0 auto;
+	}
+
+	.nav-section li {
+		display: inline-block;
+		margin: 0px 5px;
+	}
+
+	.nav-section a {
+		color: var(--gray-Blue);
+		font-size: 0.8em;
+	}
+
+	#nav-request-btn {
+		/* I think the button is so big b/c of this; it's spanning to whole size of the grid column */
+		display: block;
+		grid-column: span 1;
+	}
+
+	/* ---------- headline section ---------- */
+	.headline-section.grid {
+		/* create two rows */
+		grid-template-rows: repeat(1, minmax(auto, auto));
+	}
+
+	.headline-section.grid .mobile-bg-img-group {
+		grid-row: 1;
+		grid-column: span 3;
+
+		/* background image */
+		background-image: url('./images/bg-intro-desktop.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: top left;
+
+		/* overflow = controls what happnes to content that breaks outside of its bounds */
+		overflow: hidden;
+	}
+
+	.headline-section.grid .mobile-bg-img-group img {
+		/* make the image full width */
+		width: 100%;
+
+		position: relative;
+		top: -50px;
+	}
+
+	.headline-section.grid .headline-section-group {
+		grid-row: 1;
+		grid-column: span 1;
+
+		text-align: center;
+
+		/* all HTML elements should have 20px left-right */
+		margin: 0px 20px;
+
+		margin-bottom: 100px;
+	}
+
+	.headline-section.grid .headline-section-group * {
+		/* each HTML element should be spaced with 20px bottom margin */
+		margin-bottom: 20px;
+	}
+
+	/* ---------- services provided section ---------- */
+	/* inside the nested grid... */
+	.service-card-grid-item {
+		grid-column: span 2;
+	}
+
+	/* ---------- article section ---------- */
+	.article-card-grid-item {
+		/* make each card sit on their own row */
+		grid-column: span 2;
+	}
+
+	/* ---------- footer and attribution section ---------- */
+	footer.footer-section.grid {
+		grid-template-rows: repeat(2, minmax(auto, auto));
+	}
+
+	/* social media links */
+	footer.footer-section.grid .social-links-collection {
+		grid-row: 1;
+		grid-column: span 1;
+	}
+
+	.social-links-collection * {
+		margin: 0 3px;
+		width: 10%;
+	}
+
+	/* footer menu */
+	footer.footer-section.grid .footer-menu-collection {
+		grid-row: 1;
+		grid-column: span 2;
+	}
+
+	/* button and copyright */
+	footer.footer-section.grid .footer-btn-copyright-collection {
+		grid-row: 1;
+		grid-column: span 1;
+		position: relative;
+	}
+
+	/* attribution section */
+	footer.footer-section.grid .attribution-section {
+		grid-row: 2;
+		grid-column: span 4;
+	}
+}
+
+/* =================== desktop style - 1200px and above =================== */
+@media screen and (min-width: 1200px) {
+	body {
+		background-color: palegoldenrod;
+	}
+
+	/* TODO: resize cards to fit laptop screen */
+	/* ---------- services provided section ---------- */
+	.service-card-grid-item {
+		grid-column: span 1;
+	}
+
+	/* ---------- article section ---------- */
+	.article-card-grid-item {
+		grid-column: span 1;
+	}
+
+	/* ---------- footer and attribution section ---------- */
+
+}
