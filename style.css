@@ -275,6 +275,10 @@ p {
 	background-color: var(--white);
 }
 
+.article-card-grid-item * {
+	overflow: auto;
+}
+
 .article-card-grid-item:hover {
 	box-shadow: 0px 0px 15px lightgray;
 }
@@ -294,7 +298,7 @@ p {
 }
 	
 .article-card-text-collection * {
-	margin: 10px;
+	margin: 10px 0px;
 }
 
 .article-card-text-collection p {
@@ -312,23 +316,24 @@ footer.footer-section.grid {
 	padding: 40px;
 }
 
-footer.footer-section.grid * {
-	margin-bottom: 15px;
-}
-
-/* social media links */
+/* social links */
 footer.footer-section.grid .social-links-collection {
 	grid-row: 1;
 	grid-column: span 4;
 }
 
-.social-links-collection * {
+footer.footer-section.grid .social-links-collection * {
 	margin: 0 5px;
 }
 
-/* footer menu */
+/* mini footer menu */
 footer.footer-section.grid .footer-menu-collection {
 	grid-row: 2;
+	grid-column: span 4;
+	margin: 10px 0px;
+}
+
+.footer-menu-collection.nested-grid li {
 	grid-column: span 4;
 }
 
@@ -343,9 +348,9 @@ footer.footer-section.grid .footer-btn-copyright-collection {
 	grid-column: span 4;
 }
 
-.footer-btn-copyright-collection {
+.footer-btn-copyright-collection * {
 	text-align: center;
-	margin: 20px;
+	margin: 10px auto;
 }
 
 #copyright {
@@ -446,7 +451,6 @@ footer.footer-section.grid .attribution-section {
 
 	/* ---------- headline section ---------- */
 	.headline-section.grid {
-		/* create two rows */
 		grid-template-rows: repeat(1, minmax(auto, auto));
 	}
 
@@ -476,12 +480,10 @@ footer.footer-section.grid .attribution-section {
 		grid-row: 1;
 		grid-column: span 1;
 
-		text-align: center;
+		text-align: left;
 
 		/* all HTML elements should have 20px left-right */
-		margin: 0px 20px;
-
-		margin-bottom: 100px;
+		margin: 30px 40px 100px;
 	}
 
 	.headline-section.grid .headline-section-group * {
@@ -490,6 +492,16 @@ footer.footer-section.grid .attribution-section {
 	}
 
 	/* ---------- services provided section ---------- */
+	.why-choose-section.grid .head-why-choose-collection {
+		text-align: left;
+	}
+	.why-choose-section.grid .head-why-choose-collection h2 {
+		width: 39ch;
+
+		/* each HTML element should be spaced with 20px bottom margin */
+		margin: 0 248.391px 20px;
+	}
+
 	/* inside the nested grid... */
 	.service-card-grid-item {
 		grid-column: span 2;
@@ -506,20 +518,24 @@ footer.footer-section.grid .attribution-section {
 		grid-template-rows: repeat(2, minmax(auto, auto));
 	}
 
-	/* social media links */
+	/* social links */
 	footer.footer-section.grid .social-links-collection {
 		grid-row: 1;
 		grid-column: span 1;
 	}
 
-	.social-links-collection * {
+	footer.footer-section.grid .social-links-collection * {
 		margin: 0 3px;
-		width: 10%;
 	}
 
-	/* footer menu */
+	/* mini footer menu */
 	footer.footer-section.grid .footer-menu-collection {
 		grid-row: 1;
+		grid-column: span 2;
+		margin: 0px 0px;
+	}
+
+	.footer-menu-collection.nested-grid li {
 		grid-column: span 2;
 	}
 
@@ -527,7 +543,10 @@ footer.footer-section.grid .attribution-section {
 	footer.footer-section.grid .footer-btn-copyright-collection {
 		grid-row: 1;
 		grid-column: span 1;
-		position: relative;
+	}
+
+	.footer-btn-copyright-collection * {
+		margin: 5px auto;
 	}
 
 	/* attribution section */
@@ -539,21 +558,128 @@ footer.footer-section.grid .attribution-section {
 
 /* =================== desktop style - 1200px and above =================== */
 @media screen and (min-width: 1200px) {
-	body {
-		background-color: palegoldenrod;
+
+	/* ---------- headline section ---------- */
+	.headline-section.grid .headline-section-group {
+		grid-row: 1;
+		grid-column: span 1;
+
+		text-align: left;
+
+		/* all HTML elements should have 20px left-right */
+		margin: 140px 140px 0px;
 	}
 
-	/* TODO: resize cards to fit laptop screen */
 	/* ---------- services provided section ---------- */
+	.why-choose-section.grid .head-why-choose-collection {
+		text-align: left;
+		margin-bottom: 50px;
+	}
+
+	.why-choose-section.grid .head-why-choose-collection h2 {
+		width: 40ch;
+		margin: 0px 140px 20px;
+	}
+
+	.why-choose-section.grid .head-why-choose-collection p {
+		width: 60ch;
+		margin: 0px 140px 20px;
+	}
+
+	/* service cards */
+	.why-choose-section.grid .service-cards-collection.nested-grid {
+		margin: 0px 140px;
+	}
+
+	.service-cards-collection.nested-grid {
+		gap: 20px;
+		font-size: medium;
+	}
+
+	/* inside the nested grid... */
 	.service-card-grid-item {
 		grid-column: span 1;
+		text-align: left;
+	}
+
+	.service-card-grid-item p {
+		margin: 0px 0px;
+		font-size: 0.9em;
+		width: 30ch;
 	}
 
 	/* ---------- article section ---------- */
+	.latest-articles-section.grid {
+		grid-template-rows: repeat(2, minmax(auto, auto));
+		margin: 80px 0px;
+	}
+	
+	.latest-articles-section.grid h2 {
+		grid-row: 1;
+		grid-column: span 4;
+		margin: 0px 140px 50px;
+		text-align: left;
+	}
+	
+	.latest-articles-section.grid .article-card-collection {
+		grid-row: 2;
+		grid-column: span 4;
+		margin: 0px 140px;
+	}
+	
 	.article-card-grid-item {
 		grid-column: span 1;
+		width: 260px;
+	}
+	
+	.article-card-grid-item img {
+		width: 260px;
+	}
+	
+	.article-card-text-collection p {
+		font-size: 0.7em;
+		width: 25ch;
 	}
 
 	/* ---------- footer and attribution section ---------- */
+	footer.footer-section.grid {
+		grid-template-rows: repeat(2, minmax(auto, auto));
+	}
 
+	/* social links */
+	footer.footer-section.grid .social-links-collection {
+		grid-row: 1;
+		grid-column: span 1;
+	}
+
+	footer.footer-section.grid .social-links-collection * {
+		margin: 0 3px;
+	}
+
+	/* mini footer menu */
+	footer.footer-section.grid .footer-menu-collection {
+		grid-row: 1;
+		grid-column: span 2;
+		margin: 0px 0px;
+	}
+
+	.footer-menu-collection.nested-grid li {
+		grid-column: span 2;
+	}
+
+	/* button and copyright */
+	footer.footer-section.grid .footer-btn-copyright-collection {
+		grid-row: 1;
+		grid-column: span 1;
+	}
+
+	.footer-btn-copyright-collection * {
+		margin: 5px auto;
+	}
+
+	/* attribution section */
+	footer.footer-section.grid .attribution-section {
+		grid-row: 2;
+		grid-column: span 4;
+	}
 }
