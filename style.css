@@ -447,6 +447,7 @@ footer.footer-section.grid .attribution-section {
 		/* I think the button is so big b/c of this; it's spanning to whole size of the grid column */
 		display: block;
 		grid-column: span 1;
+		margin: 0px auto;
 	}
 
 	/* ---------- headline section ---------- */
@@ -454,55 +455,40 @@ footer.footer-section.grid .attribution-section {
 		grid-template-rows: repeat(1, minmax(auto, auto));
 	}
 
+	/* background images */
 	.headline-section.grid .mobile-bg-img-group {
 		grid-row: 1;
-		grid-column: span 3;
+		grid-column: span 2;
 
 		/* background image */
 		background-image: url('./images/bg-intro-desktop.svg');
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: top left;
-
-		/* overflow = controls what happnes to content that breaks outside of its bounds */
-		overflow: hidden;
+		background-position: top right;
+		background-size: 110%;
 	}
 
 	.headline-section.grid .mobile-bg-img-group img {
-		/* make the image full width */
-		width: 100%;
-
 		position: relative;
-		top: -50px;
+		width: 90%;
+		top: 0px;
+		left: 0px;
 	}
-
+	
+	/* headline section */
 	.headline-section.grid .headline-section-group {
 		grid-row: 1;
-		grid-column: span 1;
+		grid-column: span 2;
 
 		text-align: left;
 
 		/* all HTML elements should have 20px left-right */
-		margin: 30px 40px 100px;
+		margin: 70px;
 	}
 
 	.headline-section.grid .headline-section-group * {
-		/* each HTML element should be spaced with 20px bottom margin */
-		margin-bottom: 20px;
+		margin: 0 0 20px 0;
 	}
 
 	/* ---------- services provided section ---------- */
-	.why-choose-section.grid .head-why-choose-collection {
-		text-align: left;
-	}
-	.why-choose-section.grid .head-why-choose-collection h2 {
-		width: 39ch;
-
-		/* each HTML element should be spaced with 20px bottom margin */
-		margin: 0 248.391px 20px;
-	}
-
-	/* inside the nested grid... */
 	.service-card-grid-item {
 		grid-column: span 2;
 	}
@@ -561,12 +547,6 @@ footer.footer-section.grid .attribution-section {
 
 	/* ---------- headline section ---------- */
 	.headline-section.grid .headline-section-group {
-		grid-row: 1;
-		grid-column: span 1;
-
-		text-align: left;
-
-		/* all HTML elements should have 20px left-right */
 		margin: 140px 140px 0px;
 	}
 
@@ -629,11 +609,11 @@ footer.footer-section.grid .attribution-section {
 	
 	.article-card-grid-item {
 		grid-column: span 1;
-		width: 260px;
+		width: 280px;
 	}
 	
 	.article-card-grid-item img {
-		width: 260px;
+		width: 280px;
 	}
 	
 	.article-card-text-collection p {
